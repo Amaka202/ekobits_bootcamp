@@ -34,11 +34,10 @@ let programming = {
     jokes: "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke"
 };
 
-for (let key in programming){
-    for (let lang of languages){
+    for (let lang of programming.languages){
         console.log(lang);
     }
-}
+
 
 // Using a loop, console.log all of the keys in the programming object.
 

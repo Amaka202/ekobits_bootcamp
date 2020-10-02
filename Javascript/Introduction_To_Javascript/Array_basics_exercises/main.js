@@ -99,7 +99,7 @@ arr.unshift("Blue");
 
 console.log(arr);
 
-// Remove the favorite color from the arr variable (remember this is the first value in the array - what method can you use to remove the first value in an array?)
+// Remove the favorite color from the arr variable (remember this is the fiirst value in the array - what method can you use to remove the first value in an array?)
 
 arr.shift();
 
