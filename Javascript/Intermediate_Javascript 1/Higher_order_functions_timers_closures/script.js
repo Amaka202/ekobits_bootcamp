@@ -105,22 +105,23 @@ function countDown(num) {
 // Write a function called randomGame that selects a random number between 0 and 1 every 1000 milliseconds and each time that a random number is picked, add 1 to a counter. If the number is 7, stop the timer and return the number of tries it took before we found 7.
 
 function randomGame() {
-    
-    let timerId4 = setInterval(function(){
-        let randomNum = (Math.ceil(Math.random() * 10));
-        let counter = 0;
-        
-        
-        if (randomNum != 7){
-            ++counter;
-            console.log(randomNum);
-            console.log("counter: " + counter)
-        }else if (randomNum == 7){
-            console.log("Yea you got 7 after attempting" + " " + counter + " " + "times")
-            // console.log(counter);
-            clearInterval(timerId4);
+    let counter = 0;
+    let timerId = setInterval(() => {
+        counter =+ 1;
+        let randomNum = Math.random().toFixed(2) * 10;
+        randomNum= Math.round(randomNum);
+        console.log(randomNum)
+
+        if(randomNum == 7){
+            console.log(`Number ${randomNum} reached. Took ${counter} trail(s)`)
+            stopTimer();
+            return;
         }
-    }, 1000);
+    }, 1000)
+
+    const stopTimer = () => {
+        clearInterval(timerId);
+    }
 }
 
 
@@ -152,10 +153,33 @@ numberFact(59,isPrime); // true
 // Write a function called find. It should take in an array and a callback and return the first value found in the array that matches the condition.
 
 function find(arr, fn) {
-    for (let i = 0; i < arr.length; i++){
-        return fn(arr[i]);
+    let match;
+    for (let i = 0; i < arr.length; i++) {
+       let isMatch = fn(arr[i]);
+       if (isMatch){
+           match = arr[i];
+           break;
+       }
+        
     }
+    return match;
 }
+
+// Write a function called findIndex. It should take in an array and a callback and return the index of first value found in the array that matches the condition.
+
+function findIndex(arr, fn) {
+    let match;
+    for (let i = 0; i < arr.length; i++) {
+       let isMatch = fn(arr[i]);
+       if (isMatch){
+           match = arr.indexOf(arr[i]);
+           break;
+       }
+        
+    }
+    return match;
+}
+
 
 
 // Write a function called specialMultiply which accepts two parameters. If the function is passed both parameters, it should return the product of the two. If the function is only passed one parameter - it should return a function which can later be passed another parameter to return the product. You will have to use closure and arguments to solve this.

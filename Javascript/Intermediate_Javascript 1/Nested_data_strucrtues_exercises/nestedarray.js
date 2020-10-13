@@ -34,6 +34,19 @@ function sumTotal() {
 
 // Given the following array, write a function called countVowels, which returns the count of all of the vowels in each string regardless of case. To see if a value is an array, you can not use typeof since that will return 'object', so one way to do this is by using the Array.isArray function.
 
+function countVowels(str) {
+        let newStr = str.split("");
+        let count = 0;
+        var vowel_list = 'aeiouAEIOU';
+        newStr.forEach(val => {
+            if(vowel_list.indexOf(val) !== -1){
+                count += 1;
+            }
+        }) 
+        return count;  
+}
+
+
 
 // Write a function called rotate which takes an array and a number, and moves each element however many spaces the number is to the right. For the value at the end of the array, rotate should move it back to the beginning.
 
