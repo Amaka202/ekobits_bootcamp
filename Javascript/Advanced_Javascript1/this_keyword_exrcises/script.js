@@ -149,7 +149,7 @@ function invokeMax(fn, maxNum) {
         if(counter > maxNum){
             return "Maxed Out!";
         }else{
-            return fn();
+            return fn.apply(this.arguments);
         }
     }
 }
