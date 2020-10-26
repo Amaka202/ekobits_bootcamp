@@ -82,8 +82,8 @@ console.log(arr.myMap(val => val * 2))
 
 // Implement a function that reverses a string and place it on the String.prototype
 
-const reverse = function (str) {
-    str = str.split("").reverse().join("")
+String.prototype.reverse = function () {
+    str = this.split("").reverse().join("")
     return str;
 }
 
