@@ -1,21 +1,29 @@
-var earth = {
-    isRound: true,
-    numberFromSun: 3,
-    density: 5.51
-};
+const counter = (function counter() {
+    let value = 0;
+    return {
+      getValue: function() {
+        return value;
+      },
+      changeBy: function(k) {
+        value += k;
+      },
+    }
+  })();
 
-describe("Earth", function(){
-
-    it("is round", function(){
-        expect(earth.isRound).toEqual(false);
-    });
-
-    it("is the third planet from the sun", function(){
-        expect(earth.numberFromSun).toEqual(3);
-    });
-
-    it("is the densest of all the planets", function(){
-        expect(earth.density).toBeGreaterThan(5.50);
-    });
-
-});
+  function stepCounter(k) {
+    // write your code here
+    return {
+        increment: function(){
+            return counter.changeBy()
+            console.log(counter.changeBy())
+        },
+        decrement: function(){
+            return counter.getValue() -= k;
+            console.log(counter.getValue() -= k)
+        },
+        getValue: function(){
+            return counter.getValue();
+            console.log(counter.getValue())
+        }
+    }
+  }
