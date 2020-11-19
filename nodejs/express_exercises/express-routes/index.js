@@ -6,17 +6,7 @@ const items = [];
 let id = 1;
 
 router.get("/items", (req, res) => {
-    return res.json(items);
-})
-
-router.post("/items", (req, res) => {
-    items.push({
-        item: req.params.item,
-        price: req.params.price,
-        id: ++id
-    });
-    return res.json({message: "item added!"})
-})
+    return res.js
 
 
 router.get("/items/:id", (req, res) => {
