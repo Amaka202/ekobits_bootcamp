@@ -18,3 +18,5 @@ class Pokemon extends Component {
 }
 
 export default Pokemon;
+
+
