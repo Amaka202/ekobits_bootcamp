@@ -1,24 +1,16 @@
 import React from "react";
 import logo from './logo.svg';
 import './App.css';
+import Todoitem from "./Todoitem";
+import {todoList} from "./todoList";
 
 function App() {
+  const todoListItem = todoList.map((item, index) => <Todoitem key={index} chore={item}/>)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo-list">
+      {todoListItem}
     </div>
   );
 }
