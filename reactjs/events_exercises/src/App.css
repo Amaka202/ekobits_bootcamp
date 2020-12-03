@@ -5,3 +5,32 @@
 .linkDiv{
     margin: 3rem;
 }
+
+.container{
+    text-align: center;
+    align-content: center;
+}
+
+form{
+    padding: 1rem;
+    border: 2px solid grey;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+form input{
+    margin-right: 1rem;
+}
+
+form button{
+    display: block;
+    margin-top: 1rem;
+    align-content: center;
+}
+
+form .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
